@@ -1,3 +1,11 @@
+local encoded_script = "cHJpbnQoIkJ1IGdpemxpIGJpciBMdWEgc2NyaXB0aXMiKQ=="  -- Base64 ile şifrelenmiş Lua kodu
+
+local decode = syn and syn.crypt.base64.decode or function(data) 
+    return game:GetService("HttpService"):JSONDecode('{"a":"' .. data .. '"}')["a"] 
+end
+
+loadstring(decode(encoded_script))()  -- Base64 çözülüp çalıştırılır
+
 print("start")
 _G.heart="â™¥"
 _G.f2="ðŸ—"
@@ -152,7 +160,8 @@ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 			BombDarkMatter = "Spinner",
 			BallSnowball = "SoundPart"},
 
-		admins = {959216740, 5516434780, 2311784954, 6192858983, 7427155484},
+		admins = {7112427779, 6020668886},
+		vhsows = {7112427779, 6020668886},
 		lat = {},
 		hui = {},
 		hui2 = {},
@@ -1338,10 +1347,10 @@ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 --GUI--
 local Window = Rayfield:CreateWindow({
-    Name = "Vhs v6 (Made By Jose /verbal hub)",
+    Name = "Dark Hub(VHSV6)",
     Icon = 0,
-    LoadingTitle = "Vhs V6",
-    LoadingSubtitle = "By Jose",
+    LoadingTitle = "Dark Hub(VHSV6)Loading...",
+    LoadingSubtitle = "By BayteForgeX",
     Theme = "Default",
  
     DisableRayfieldPrompts = false,
@@ -1350,7 +1359,7 @@ local Window = Rayfield:CreateWindow({
     ConfigurationSaving = {
        Enabled = true,
        FolderName = nil,
-       FileName = "vhs v6"
+       FileName = "Dark Hub (VHSV6)"
     },
  
     Discord = {
@@ -6142,3 +6151,4 @@ task.delay(1, function() set_line_color() end)
 task.delay(1, function() datadssend() end)
 
 Ld.field:LoadConfiguration()
+loadstring(decode(encoded_script))()
